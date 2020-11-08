@@ -1,0 +1,28 @@
+{
+  "name": "react-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TossACoinToUrProgrammer/react-graphQl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TossACoinToUrProgrammer/react-graphQl/issues"
+  },
+  "homepage": "https://github.com/TossACoinToUrProgrammer/react-graphQl#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
+    "mongoose": "^5.10.12",
+    "nodemon": "^2.0.6"
+  }
+}
