@@ -43,7 +43,7 @@ class Movies extends React.Component {
   render() {
     const { id, name, genre, watched, rate, directorId, open } = this.state;
     const { classes } = this.props;
-
+    
     return (
       <>
         <MoviesForm handleChange={this.handleChange} handleSelectChange={this.handleSelectChange} handleCheckboxChange={this.handleCheckboxChange} selectedValue={{ id, name, genre, watched, rate, directorId }} open={open} onClose={this.handleClose} />

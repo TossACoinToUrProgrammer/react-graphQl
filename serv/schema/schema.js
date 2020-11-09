@@ -151,14 +151,14 @@ const Query = new GraphQLObjectType({
         name: { type: GraphQLString },
         genre: { type: GraphQLString }
       },
-      resolve(parent, { name, genre }) {
+      resolve(parent, { name = '', genre = '' }) {
         return Movies.find({ name: { $regex: name, $options: "i" }, genre: { $regex: genre, $options: "i" } });
       },
     },
     directors: {
       type: new GraphQLList(DirectorType),
       args: { name: { type: GraphQLString } },
-      resolve(parent, { name }) {
+      resolve(parent, { name = '' }) {
         return Directors.find({ name: { $regex: name, $options: "i" }});
       },
     },

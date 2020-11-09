@@ -31,7 +31,7 @@ class MoviesForm extends React.Component {
     const { classes, open, handleChange, handleSelectChange, handleCheckboxChange, selectedValue = {}, data = {} } = this.props;
     const { name, genre, rate, directorId, watched } = selectedValue;
     const { directors = []} = data;
-
+    debugger
     return (
       <Dialog onClose={this.handleClose} open={open} aria-labelledby="simple-dialog-title">
         <DialogTitle className={classes.title} id="simple-dialog-title">Movie information</DialogTitle>
