@@ -23,7 +23,8 @@ class MoviesTable extends React.Component {
   state = {
     anchorEl: null,
     openDialog: false,
-    name: ''
+    name: '',
+    genre: ''
   };
 
   handleChange = name => (e) => { 
@@ -31,11 +32,11 @@ class MoviesTable extends React.Component {
   };
   handleSearch = (e) => {
     const { data } = this.props;
-    const { name } = this.state;
-    
+    const { name, genre } = this.state;
+
     if(e.charCode === 13) {
       data.fetchMore({
-        variables: { name },
+        variables: { name, genre },
         updateQuery: (previousResult, { fetchMoreResult }) => fetchMoreResult,
       });
     }
@@ -65,7 +66,7 @@ class MoviesTable extends React.Component {
   render() {
     const { anchorEl, openDialog, data: activeElem = {}, name } = this.state;
 
-    const { classes, data } = this.props;
+    const { classes, data, handleSelectChange, selectedValue } = this.props;
 
     const { movies = [] } = data; 
 
@@ -73,7 +74,7 @@ class MoviesTable extends React.Component {
     return (
       <>
         <Paper>
-          <MoviesSearch name={name} handleChange={this.handleChange} handleSearch={this.handleSearch} />
+          <MoviesSearch selectedValue={selectedValue} handleSelectChange={handleSelectChange} name={name} handleChange={this.handleChange} handleSearch={this.handleSearch} />
         </Paper>
         <MoviesDialog open={openDialog} handleClose={this.handleDialogClose} id={activeElem.id} />
         <Paper className={classes.root}>

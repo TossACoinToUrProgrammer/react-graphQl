@@ -3,6 +3,14 @@ export const styles = theme => ({
     position: 'relative',
     width: '100%',
     marginBottom: theme.spacing(3),
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+  },
+  dropDown: {
+    width: '30%',
   },
   searchIcon: {
     width: theme.spacing(9),
@@ -15,12 +23,9 @@ export const styles = theme => ({
   },
   inputRoot: {
     color: 'inherit',
-    width: '100%',
+    width: '70%',
   },
   inputInput: {
-    paddingTop: theme.spacing(2),
-    paddingRight: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
     paddingLeft: theme.spacing(10),
   },
 });

@@ -7,8 +7,8 @@ import { moviesQuery } from './queries';
 import { styles } from './styles';  
 
 const withGraphql = graphql(moviesQuery, {
-    options: ({name = ''}) => ({
-        variables: { name },
+    options: ({name = '', genre = ''}) => ({
+        variables: { name, genre },
     }),
 })
 
